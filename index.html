@@ -1,128 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Customer Records</title>
- 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+Â  <meta charset="UTF-8" />
+Â  <meta name="viewport" content="width=device-width, initial-scale=1" />
+Â  <title>Customer Records</title>
+Â 
+Â  <!-- Bootstrap 5 CSS -->
+Â  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="container py-4">
-    <h3 class="mb-4 text-center">Customer Service Records</h3>
- 
-    <!-- Search Box -->
-    <div class="mb-4">
-      <input
-        type="search"
-        id="searchBox"
-        class="form-control"
-        placeholder="Search by Name, Nickname, Location or Mobile Number"
-      />
-    </div>
- 
-    <!-- Customer List -->
-    <div id="customerList">
-      <div class="text-center text-muted">Loading...</div>
-    </div>
-  </div>
- 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 
-  <!-- Script -->
-  <script>
-    const searchBox = document.getElementById('searchBox');
-    const customerList = document.getElementById('customerList');
-    let customers = [];
- 
-    fetch('customers.json')
-      .then(res => res.json())
-      .then(data => {
-        customers = data;
-        renderCustomers(customers);
-      })
-      .catch(err => {
-        customerList.innerHTML = '<div class="text-danger text-center">Failed to load data.</div>';
-        console.error(err);
-      });
- 
-    function renderCustomers(data) {
-      if (data.length === 0) {
-        customerList.innerHTML = '<div class="text-center text-muted">No records found</div>';
-        return;
-      }
- 
-      customerList.innerHTML = '';
- 
-      data.forEach(cust => {
-        const imageUrl = cust.WarrantyCardImageOrProductImage?.trim()
-          ? cust.WarrantyCardImageOrProductImage
-          : 'https://via.placeholder.com/150?text=No+Image';
- 
-        const card = document.createElement('div');
-        card.className = 'border rounded p-3 mb-3 bg-light';
- 
-        card.innerHTML = `
-          <div class="row">
-            <div class="col-sm-6 mb-2">
-              <strong>S.No:</strong> ${cust.Sno}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Customer ID:</strong> ${cust.CustomerId}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Name:</strong> ${cust.Name}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Nickname:</strong> ${cust.Nickname || '-'}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Mobile:</strong> ${cust.MobileNumber}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Location:</strong> ${cust.Location}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Products:</strong> ${cust.Products}
-            </div>
-            <div class="col-sm-6 mb-2">
-              <strong>Product Details:</strong> ${cust.ProductDetails}
-            </div>
-            <div class="col-12 mb-2">
-              <strong>Remarks:</strong> ${cust.Remarks}
-            </div>
-            <div class="col-12">
-              <strong>Product / Warranty Image:</strong><br />
-              <img src="${imageUrl}" alt="Image" class="img-fluid rounded mt-2" />
-            </div>
-          </div>
-        `;
- 
-        customerList.appendChild(card);
-      });
-    }
- 
-    // Live search filter
-    searchBox.addEventListener('input', () => {
-      const query = searchBox.value.trim().toLowerCase();
- 
-      if (!query) {
-        renderCustomers(customers);
-        return;
-      }
- 
-      const filtered = customers.filter(c =>
-        (c.Name && c.Name.toLowerCase().includes(query)) ||
-        (c.Nickname && c.Nickname.toLowerCase().includes(query)) ||
-        (c.MobileNumber && c.MobileNumber.toLowerCase().includes(query)) ||
-        (c.Location && c.Location.toLowerCase().includes(query))
-      );
- 
-      renderCustomers(filtered);
-    });
-  </script>
+Â  <div class="container py-4">
+Â  Â  <h3 class="mb-4 text-center">Customer Service Records</h3>
+Â 
+Â  Â  <!-- Search Box -->
+Â  Â  <div class="mb-4">
+Â  Â  Â  <input
+Â  Â  Â  Â  type="search"
+Â  Â  Â  Â  id="searchBox"
+Â  Â  Â  Â  class="form-control"
+Â  Â  Â  Â  placeholder="Search by Name, Nickname, Location or Mobile Number"
+Â  Â  Â  />
+Â  Â  </div>
+Â 
+Â  Â  <!-- Customer List -->
+Â  Â  <div id="customerList">
+Â  Â  Â  <div class="text-center text-muted">Loading...</div>
+Â  Â  </div>
+Â  </div>
+Â 
+Â  <!-- Bootstrap JS Bundle -->
+Â  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+Â 
+Â  <!-- Script -->
+Â  <script>
+Â  Â  const searchBoxÂ = document.getElementById('searchBox');
+Â  Â  const customerListÂ = document.getElementById('customerList');
+Â  Â  let customers = [];
+Â 
+Â  Â  fetch('https://devplanet87.github.io/CustomerService/customers.json')
+Â  Â  Â  .then(res => res.json())
+Â  Â  Â  .then(data => {
+Â  Â  Â  Â  customers = data;
+Â  Â  Â  Â  renderCustomers(customers);
+Â  Â  Â  })
+Â  Â  Â  .catch(err => {
+Â  Â  Â  Â  customerList.innerHTMLÂ = '<div class="text-danger text-center">Failed to load data.</div>';
+Â  Â  Â  Â  console.error(err);
+Â  Â  Â  });
+Â 
+Â  Â  function renderCustomers(data) {
+Â  Â  Â  if (data.lengthÂ === 0) {
+Â  Â  Â  Â  customerList.innerHTMLÂ = '<div class="text-center text-muted">No records found</div>';
+Â  Â  Â  Â  return;
+Â  Â  Â  }
+Â 
+Â  Â  Â  customerList.innerHTMLÂ = '';
+Â 
+Â  Â  Â  data.forEach(custÂ => {
+Â  Â  Â  Â  const imageUrlÂ = cust.WarrantyCardImageOrProductImage?.trim()
+Â  Â  Â  Â  Â  ? cust.WarrantyCardImageOrProductImage
+Â  Â  Â  Â  Â  : 'https://via.placeholder.com/150?text=No+Image';
+Â 
+Â  Â  Â  Â  const card = document.createElement('div');
+Â  Â  Â  Â  card.classNameÂ = 'border rounded p-3 mb-3 bg-light';
+Â 
+Â  Â  Â  Â  card.innerHTMLÂ = `
+Â  Â  Â  Â  Â  <div class="row">
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>S.No:</strong> ${cust.Sno}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Customer ID:</strong> ${cust.CustomerId}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Name:</strong> ${cust.Name}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Nickname:</strong> ${cust.NicknameÂ || '-'}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Mobile:</strong> ${cust.MobileNumber}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Location:</strong> ${cust.Location}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Products:</strong> ${cust.Products}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-sm-6 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Product Details:</strong> ${cust.ProductDetails}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-12 mb-2">
+Â  Â  Â  Â  Â  Â  Â  <strong>Remarks:</strong> ${cust.Remarks}
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  Â  <div class="col-12">
+Â  Â  Â  Â  Â  Â  Â  <strong>Product / Warranty Image:</strong><brÂ />
+Â  Â  Â  Â  Â  Â  Â  <img src="${imageUrl}" alt="Image" class="img-fluid rounded mt-2" />
+Â  Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  Â  </div>
+Â  Â  Â  Â  `;
+Â 
+Â  Â  Â  Â  customerList.appendChild(card);
+Â  Â  Â  });
+Â  Â  }
+Â 
+Â  Â  // Live search filter
+Â  Â  searchBox.addEventListener('input', () => {
+Â  Â  Â  const query = searchBox.value.trim().toLowerCase();
+Â 
+Â  Â  Â  if (!query) {
+Â  Â  Â  Â  renderCustomers(customers);
+Â  Â  Â  Â  return;
+Â  Â  Â  }
+Â 
+Â  Â  Â  const filtered = customers.filter(c =>
+Â  Â  Â  Â  (c.NameÂ && c.Name.toLowerCase().includes(query)) ||
+Â  Â  Â  Â  (c.NicknameÂ && c.Nickname.toLowerCase().includes(query)) ||
+Â  Â  Â  Â  (c.MobileNumberÂ && c.MobileNumber.toLowerCase().includes(query)) ||
+Â  Â  Â  Â  (c.LocationÂ && c.Location.toLowerCase().includes(query))
+Â  Â  Â  );
+Â 
+Â  Â  Â  renderCustomers(filtered);
+Â  Â  });
+Â  </script>
 </body>
 </html>
- 
+
+Â 
