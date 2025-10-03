@@ -34,7 +34,7 @@ placeholder="Search by Name, Nickname, Location or Mobile Number"
   const customerList= document.getElementById('customerList');
   let customers = [];
 
-  fetch('https://github.com/devPlanet87/CustomerService/blob/main/customers.json')
+  fetch('customers.json')
    .then(res => res.json())
    .then(data => {
     customers = data;
@@ -119,3 +119,4 @@ placeholder="Search by Name, Nickname, Location or Mobile Number"
 </script>
 </body>
 </html>
+
