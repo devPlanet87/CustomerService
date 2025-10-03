@@ -1,0 +1,74 @@
+[
+   {
+      "Sno":1,
+      "CustomerId":"1",
+      "Name":"Sathish",
+      "Nickname":"",
+      "MobileNumber":"8428407191",
+      "Location":"Vandalur - otteri",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":"plumbing work need for next month"
+   },
+   {
+      "Sno":2,
+      "CustomerId":"2",
+      "Name":"Ramkumar",
+      "Nickname":"",
+      "MobileNumber":"",
+      "Location":"Thiruverkadu",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":""
+   },
+   {
+      "Sno":3,
+      "CustomerId":"3",
+      "Name":"Suresh",
+      "Nickname":"",
+      "MobileNumber":"",
+      "Location":"Thiruverkadu",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":""
+   },
+   {
+      "Sno":4,
+      "CustomerId":"4",
+      "Name":"Rama subbu",
+      "Nickname":"",
+      "MobileNumber":"",
+      "Location":"kayarambedu",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":""
+   },
+   {
+      "Sno":5,
+      "CustomerId":"5",
+      "Name":"AVR durai",
+      "Nickname":"",
+      "MobileNumber":"",
+      "Location":"vandalur",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":""
+   },
+   {
+      "Sno":6,
+      "CustomerId":"6",
+      "Name":"Udhaya",
+      "Nickname":"",
+      "MobileNumber":"",
+      "Location":"Mudichur",
+      "Products":"",
+      "ProductDetails":"10 pending calls",
+      "WarrantyCardImageOrProductImage":"https://via.placeholder.com/100",
+      "Remarks":""
+   }
+]
