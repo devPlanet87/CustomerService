@@ -5,11 +5,11 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Customer Services</h2>
-    <a class="btn btn-primary" href="/CustomerServices/Create">Create New</a>
+    <a class="btn btn-primary btn-sm" href="/CustomerServices/Create">Create New</a>
 </div>
 
-<table class="table table-striped">
-    <thead>
+<table class="table table-sm table-striped table-bordered table-hover small">
+    <thead class="table-primary">
         <tr>
             <th>#</th>
             <th>Customer</th>
@@ -17,7 +17,7 @@
             <th>Location</th>
             <th>Product</th>
             <th>Remarks</th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
             <td>@(item.Product?.ProductName ?? item.ProductId.ToString())</td>
             <td>@item.Remarks</td>
             <td>
-                <a class="btn btn-sm btn-secondary" href="/CustomerServices/Edit/@item.CustomerServiceId">Edit</a>
+                <a class="link-opacity-50-hover" href="/CustomerServices/Edit/@item.CustomerServiceId">Edit</a>
             </td>
         </tr>
     }

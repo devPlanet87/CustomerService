@@ -15,4 +15,9 @@
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
 
+  <Target Name="UnblockOutput" AfterTargets="Build" Condition=" '$(OS)' == 'Windows_NT' ">
+    <!-- Unblock any DLLs generated in the output folder to avoid 'An Application Control policy has blocked this file' errors during local development. -->
+    <Exec Command="powershell -NoProfile -NonInteractive -Command &quot;Get-ChildItem -Path '$(OutputPath)' -Filter '*.dll' -Recurse | ForEach-Object { Unblock-File -LiteralPath $_.FullName -ErrorAction SilentlyContinue }&quot;" />
+  </Target>
+
 </Project>

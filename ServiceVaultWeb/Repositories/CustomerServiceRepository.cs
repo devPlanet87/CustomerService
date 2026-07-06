@@ -18,8 +18,6 @@ namespace ServiceVaultWeb.Repositories
 
         public async Task AddAsync(CustomerService entity)
         {
-            entity.CreatedBy = "Admin";
-            entity.CreatedDateTime = DateTime.Now;
             await _context.CustomerServices.AddAsync(entity);
             await _context.SaveChangesAsync();
         }

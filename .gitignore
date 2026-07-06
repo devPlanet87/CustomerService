@@ -1,0 +1,20 @@
+# .gitignore for Visual Studio / .NET projects (Razor Pages)
+# Generated for a .NET 10 Razor Pages solution
+
+# Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+# Build Folders
+# Visual Studio Code workspace
+# Rider
+# NuGet
+# Publish output
+# Test Results
+# NCrunch
+# Coverage and profiling
+# Rider and ReSharper
+# IIS Express
+# Entity Framework
+# Logs
+# User secrets and local settings
+# OS generated files

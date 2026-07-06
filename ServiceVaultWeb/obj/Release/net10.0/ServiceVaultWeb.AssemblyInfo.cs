@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ServiceVaultWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4d80c91085a63a10730e380e3abb3d72852fb9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb139fb9c04c9d35f56c6fef685d27345f07cf07")]
 [assembly: System.Reflection.AssemblyProductAttribute("ServiceVaultWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ServiceVaultWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
