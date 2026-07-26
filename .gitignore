@@ -74,3 +74,6 @@ nunit-*.xml
 /ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.sourcelink.json
 *.json
 /ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.csproj.FileListAbsolute.txt
+/.vs
+/ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.GeneratedMSBuildEditorConfig.editorconfig
+/ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.csproj.CoreCompileInputs.cache
