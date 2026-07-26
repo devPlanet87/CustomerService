@@ -12,9 +12,9 @@ namespace ServiceVaultWeb.Models
         [Key]
         public int CustomerServiceId { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Please select a customer.")]
         [Display(Name = "Customer")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
         // Navigation property for the customer (optional)
         public CustomerInfo? Customer { get; set; }
@@ -26,9 +26,9 @@ namespace ServiceVaultWeb.Models
         [StringLength(250)]
         public string? Location { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please select a product.")]
         [Display(Name = "Product")]
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
 
         // Navigation property for the product (optional)
         public Product? Product { get; set; }

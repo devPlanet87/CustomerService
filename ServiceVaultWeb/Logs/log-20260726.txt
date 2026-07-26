@@ -1,0 +1,489 @@
+2026-07-26 21:27:09.015 +05:30 [INF] User profile is available. Using 'C:\Users\phman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-26 21:27:09.292 +05:30 [WRN] The WebRootPath was not found: C:\Users\phman\source\repos\CustomerService\ServiceVaultWeb\wwwroot. Static files may be unavailable.
+2026-07-26 21:27:09.595 +05:30 [INF] Now listening on: https://localhost:52047
+2026-07-26 21:27:09.595 +05:30 [INF] Now listening on: http://localhost:52048
+2026-07-26 21:27:09.672 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-26 21:27:09.673 +05:30 [INF] Hosting environment: Development
+2026-07-26 21:27:09.673 +05:30 [INF] Content root path: C:\Users\phman\source\repos\CustomerService\ServiceVaultWeb
+2026-07-26 21:27:14.488 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/ - null null
+2026-07-26 21:27:15.076 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:27:15.160 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:27:21.187 +05:30 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:27:21.365 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:27:21.714 +05:30 [INF] Executed ViewResult - view Index executed in 398.8293ms.
+2026-07-26 21:27:21.725 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 6564.1231ms
+2026-07-26 21:27:21.728 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:27:21.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:27:21.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:27:21.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/ - 200 null text/html; charset=utf-8 7358.6757ms
+2026-07-26 21:27:21.827 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 17.9673ms
+2026-07-26 21:27:22.305 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 496.1731ms
+2026-07-26 21:27:22.560 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/favicon.ico - null null
+2026-07-26 21:27:22.567 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/favicon.ico - 404 0 null 6.8606ms
+2026-07-26 21:27:22.570 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52047/favicon.ico, Response status code: 404
+2026-07-26 21:28:23.966 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - null null
+2026-07-26 21:28:24.190 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:28:24.246 +05:30 [INF] Route matched with {action = "Edit", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:28:24.478 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+WHERE [c].[CustomerServiceId] = @__id_0
+2026-07-26 21:28:24.801 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 21:28:24.819 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 21:28:24.935 +05:30 [INF] Executing ViewResult, running view Edit.
+2026-07-26 21:28:25.180 +05:30 [INF] Executed ViewResult - view Edit executed in 261.5957ms.
+2026-07-26 21:28:25.181 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb) in 933.7781ms
+2026-07-26 21:28:25.181 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:28:25.181 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - 200 null text/html; charset=utf-8 1217.4028ms
+2026-07-26 21:28:25.275 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:28:25.276 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:28:25.278 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 2.1902ms
+2026-07-26 21:28:25.317 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4767ms
+2026-07-26 21:30:36.827 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 21:30:36.909 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:30:36.909 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:30:37.125 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:30:37.128 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:30:37.130 +05:30 [INF] Executed ViewResult - view Index executed in 2.4325ms.
+2026-07-26 21:30:37.131 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 221.1657ms
+2026-07-26 21:30:37.131 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:30:37.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 305.0454ms
+2026-07-26 21:30:37.226 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:30:37.261 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:30:37.263 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 2.293ms
+2026-07-26 21:30:37.276 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.0038ms
+2026-07-26 21:32:36.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - null null
+2026-07-26 21:32:36.859 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:32:36.860 +05:30 [INF] Route matched with {action = "Edit", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:32:36.887 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+WHERE [c].[CustomerServiceId] = @__id_0
+2026-07-26 21:32:36.893 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 21:32:36.899 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 21:32:36.900 +05:30 [INF] Executing ViewResult, running view Edit.
+2026-07-26 21:32:36.917 +05:30 [INF] Executed ViewResult - view Edit executed in 17.8525ms.
+2026-07-26 21:32:36.918 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb) in 57.4441ms
+2026-07-26 21:32:36.918 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:32:36.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - 200 null text/html; charset=utf-8 84.1906ms
+2026-07-26 21:32:37.000 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:32:37.001 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:32:37.003 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.6426ms
+2026-07-26 21:32:37.025 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.0511ms
+2026-07-26 21:34:05.303 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - null null
+2026-07-26 21:34:05.325 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:34:05.326 +05:30 [INF] Route matched with {action = "Edit", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:34:05.348 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+WHERE [c].[CustomerServiceId] = @__id_0
+2026-07-26 21:34:05.354 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 21:34:05.358 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 21:34:05.359 +05:30 [INF] Executing ViewResult, running view Edit.
+2026-07-26 21:34:13.139 +05:30 [INF] Executed ViewResult - view Edit executed in 7780.235ms.
+2026-07-26 21:34:13.139 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb) in 7813.0812ms
+2026-07-26 21:34:13.139 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:34:13.139 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - 200 null text/html; charset=utf-8 7836.1048ms
+2026-07-26 21:34:13.290 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:34:13.291 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.479ms
+2026-07-26 21:34:13.345 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:34:13.358 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.5593ms
+2026-07-26 21:36:56.202 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - null null
+2026-07-26 21:36:56.263 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:36:56.263 +05:30 [INF] Route matched with {action = "Edit", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:36:56.301 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+WHERE [c].[CustomerServiceId] = @__id_0
+2026-07-26 21:36:56.309 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 21:36:56.315 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 21:36:56.316 +05:30 [INF] Executing ViewResult, running view Edit.
+2026-07-26 21:36:57.338 +05:30 [INF] Executed ViewResult - view Edit executed in 1021.7539ms.
+2026-07-26 21:36:57.338 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb) in 1074.3793ms
+2026-07-26 21:36:57.338 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:36:57.338 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - 200 null text/html; charset=utf-8 1136.156ms
+2026-07-26 21:36:57.404 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:36:57.404 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.6192ms
+2026-07-26 21:36:57.408 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:36:57.424 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.6908ms
+2026-07-26 21:37:07.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 21:37:07.541 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:37:07.542 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:37:07.559 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:37:07.560 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:37:07.566 +05:30 [INF] Executed ViewResult - view Index executed in 5.8314ms.
+2026-07-26 21:37:07.567 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 25.1929ms
+2026-07-26 21:37:07.567 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:37:07.568 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 34.1307ms
+2026-07-26 21:37:07.667 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:37:07.671 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:37:07.672 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.8916ms
+2026-07-26 21:37:07.694 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.7472ms
+2026-07-26 21:37:57.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 21:37:57.993 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:37:57.993 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:37:58.040 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:37:58.041 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:37:58.353 +05:30 [INF] Executed ViewResult - view Index executed in 311.9554ms.
+2026-07-26 21:37:58.353 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 359.3122ms
+2026-07-26 21:37:58.354 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:37:58.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 369.612ms
+2026-07-26 21:37:58.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:37:58.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.6007ms
+2026-07-26 21:37:58.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:37:58.474 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.5448ms
+2026-07-26 21:39:45.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 21:39:45.121 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:39:45.122 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:39:45.155 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:39:45.156 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:39:45.368 +05:30 [INF] Executed ViewResult - view Index executed in 211.8348ms.
+2026-07-26 21:39:45.368 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 245.5846ms
+2026-07-26 21:39:45.368 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:39:45.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 270.642ms
+2026-07-26 21:39:45.434 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:39:45.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.7175ms
+2026-07-26 21:39:45.444 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:39:45.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.0015ms
+2026-07-26 21:40:16.976 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-07-26 21:40:16.977 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.7927ms
+2026-07-26 21:40:16.977 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-07-26 21:41:42.628 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 21:41:42.645 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:41:42.645 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:41:42.673 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 21:41:42.674 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 21:41:42.850 +05:30 [INF] Executed ViewResult - view Index executed in 176.6481ms.
+2026-07-26 21:41:42.851 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 205.6432ms
+2026-07-26 21:41:42.851 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 21:41:42.851 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 222.7457ms
+2026-07-26 21:41:42.935 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:41:42.938 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:41:42.939 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.9431ms
+2026-07-26 21:41:42.973 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-07-26 21:41:42.974 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.4824ms
+2026-07-26 21:41:42.974 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-07-26 21:41:43.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.9904ms
+2026-07-26 21:42:14.348 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - null null
+2026-07-26 21:42:14.352 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:42:14.353 +05:30 [INF] Route matched with {action = "Edit", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 21:42:14.368 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+WHERE [c].[CustomerServiceId] = @__id_0
+2026-07-26 21:42:14.374 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 21:42:14.378 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 21:42:14.378 +05:30 [INF] Executing ViewResult, running view Edit.
+2026-07-26 21:42:14.383 +05:30 [INF] Executed ViewResult - view Edit executed in 4.705ms.
+2026-07-26 21:42:14.383 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb) in 30.2315ms
+2026-07-26 21:42:14.383 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Edit (ServiceVaultWeb)'
+2026-07-26 21:42:14.383 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Edit/13 - 200 null text/html; charset=utf-8 34.8954ms
+2026-07-26 21:42:14.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 21:42:14.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 21:42:14.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 2.6547ms
+2026-07-26 21:42:14.495 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-07-26 21:42:14.495 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 0.463ms
+2026-07-26 21:42:14.496 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52047/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-07-26 21:42:14.572 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 86.1405ms
+2026-07-26 22:33:42.679 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/ - null null
+2026-07-26 22:33:42.750 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:33:42.750 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:33:42.818 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 22:33:42.820 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 22:33:42.821 +05:30 [INF] Executed ViewResult - view Index executed in 3.2494ms.
+2026-07-26 22:33:42.822 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 71.7836ms
+2026-07-26 22:33:42.822 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:33:42.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/ - 200 null text/html; charset=utf-8 143.4442ms
+2026-07-26 22:33:42.894 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:33:42.895 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.5934ms
+2026-07-26 22:33:42.904 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:33:42.920 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.7087ms
+2026-07-26 22:33:49.776 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:33:49.780 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:33:49.801 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:33:49.806 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:33:49.811 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:33:49.825 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:33:49.868 +05:30 [INF] Executed ViewResult - view Create executed in 56.2752ms.
+2026-07-26 22:33:49.868 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 67.2401ms
+2026-07-26 22:33:49.868 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:33:49.869 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 92.6145ms
+2026-07-26 22:33:49.934 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:33:49.937 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:33:49.938 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.6087ms
+2026-07-26 22:33:49.950 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.4513ms
+2026-07-26 22:35:04.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:35:04.456 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:04.456 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:04.464 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:04.469 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:05.009 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:05.062 +05:30 [INF] Executed ViewResult - view Create executed in 593.004ms.
+2026-07-26 22:35:05.062 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 606.02ms
+2026-07-26 22:35:05.062 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:05.063 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 653.191ms
+2026-07-26 22:35:05.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:05.118 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.6716ms
+2026-07-26 22:35:05.128 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:05.142 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.4845ms
+2026-07-26 22:35:18.221 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:35:18.225 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:18.225 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:18.234 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:18.241 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:18.247 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:18.249 +05:30 [INF] Executed ViewResult - view Create executed in 7.5424ms.
+2026-07-26 22:35:18.250 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 24.5513ms
+2026-07-26 22:35:18.250 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:18.251 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 29.8488ms
+2026-07-26 22:35:18.324 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:18.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:18.328 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.1674ms
+2026-07-26 22:35:18.383 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.5416ms
+2026-07-26 22:35:22.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 22:35:22.534 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:22.537 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:22.560 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 22:35:22.563 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 22:35:22.566 +05:30 [INF] Executed ViewResult - view Index executed in 2.5858ms.
+2026-07-26 22:35:22.566 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 28.845ms
+2026-07-26 22:35:22.566 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:22.567 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 40.2271ms
+2026-07-26 22:35:22.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:22.663 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:22.664 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.001ms
+2026-07-26 22:35:22.683 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7791ms
+2026-07-26 22:35:26.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:35:26.617 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:26.618 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:26.629 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:26.637 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:26.639 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:26.643 +05:30 [INF] Executed ViewResult - view Create executed in 3.9861ms.
+2026-07-26 22:35:26.643 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 25.325ms
+2026-07-26 22:35:26.644 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:26.644 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 29.3618ms
+2026-07-26 22:35:26.736 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:26.738 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:26.739 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.9738ms
+2026-07-26 22:35:26.759 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.0776ms
+2026-07-26 22:35:29.071 +05:30 [INF] Request starting HTTP/2 POST https://localhost:52047/CustomerServices/Create - application/x-www-form-urlencoded 254
+2026-07-26 22:35:29.075 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:29.102 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ServiceVaultWeb.Models.CustomerService) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:29.168 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:29.170 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:29.170 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:29.173 +05:30 [INF] Executed ViewResult - view Create executed in 3.1534ms.
+2026-07-26 22:35:29.174 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 71.7759ms
+2026-07-26 22:35:29.174 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:29.174 +05:30 [INF] Request finished HTTP/2 POST https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 102.948ms
+2026-07-26 22:35:29.270 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:29.271 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:29.272 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.7305ms
+2026-07-26 22:35:29.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.7843ms
+2026-07-26 22:35:35.931 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 22:35:35.934 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:35.934 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:35.949 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 22:35:35.950 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 22:35:35.951 +05:30 [INF] Executed ViewResult - view Index executed in 1.365ms.
+2026-07-26 22:35:35.951 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 16.8932ms
+2026-07-26 22:35:35.952 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:35.952 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 21.222ms
+2026-07-26 22:35:36.054 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:36.055 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.7962ms
+2026-07-26 22:35:36.057 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:36.127 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.4534ms
+2026-07-26 22:35:38.901 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:35:38.903 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:38.904 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:38.906 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:38.909 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:38.909 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:38.914 +05:30 [INF] Executed ViewResult - view Create executed in 4.3545ms.
+2026-07-26 22:35:38.914 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 10.5853ms
+2026-07-26 22:35:38.915 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:38.915 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 14.4304ms
+2026-07-26 22:35:39.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:39.015 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:39.016 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.1654ms
+2026-07-26 22:35:39.037 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.3853ms
+2026-07-26 22:35:41.699 +05:30 [INF] Request starting HTTP/2 POST https://localhost:52047/CustomerServices/Create - application/x-www-form-urlencoded 254
+2026-07-26 22:35:41.702 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:41.702 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ServiceVaultWeb.Models.CustomerService) on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:41.709 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:41.711 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:41.712 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:41.716 +05:30 [INF] Executed ViewResult - view Create executed in 4.0053ms.
+2026-07-26 22:35:41.716 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 14.3494ms
+2026-07-26 22:35:41.716 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:41.717 +05:30 [INF] Request finished HTTP/2 POST https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 17.7901ms
+2026-07-26 22:35:41.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:41.799 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:41.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.978ms
+2026-07-26 22:35:41.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.8294ms
+2026-07-26 22:35:46.733 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices - null null
+2026-07-26 22:35:46.737 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:46.737 +05:30 [INF] Route matched with {action = "Index", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:46.742 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerServiceId], [c].[CreatedBy], [c].[CreatedDateTime], [c].[CustomerId], [c].[Location], [c].[MobileNumber], [c].[ProductId], [c].[ProductOrWarrantyImage], [c].[ProductsDetail], [c].[Remarks], [c].[UpdatedBy], [c].[UpdatedDateTime], [p].[ProductId], [p].[ProductName], [c0].[CustomerId], [c0].[CustomerName]
+FROM [CustomerServices] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[ProductId]
+INNER JOIN [CustomerInfo] AS [c0] ON [c].[CustomerId] = [c0].[CustomerId]
+ORDER BY [c].[CreatedDateTime] DESC
+2026-07-26 22:35:46.743 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-26 22:35:46.746 +05:30 [INF] Executed ViewResult - view Index executed in 2.7216ms.
+2026-07-26 22:35:46.747 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb) in 9.8174ms
+2026-07-26 22:35:46.747 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Index (ServiceVaultWeb)'
+2026-07-26 22:35:46.749 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices - 200 null text/html; charset=utf-8 15.4053ms
+2026-07-26 22:35:46.848 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:46.851 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:46.853 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 1.9285ms
+2026-07-26 22:35:46.901 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.2982ms
+2026-07-26 22:35:53.517 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/CustomerServices/Create - null null
+2026-07-26 22:35:53.519 +05:30 [INF] Executing endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:53.520 +05:30 [INF] Route matched with {action = "Create", controller = "CustomerServices"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller ServiceVaultWeb.Controllers.CustomerServicesController (ServiceVaultWeb).
+2026-07-26 22:35:53.523 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[ProductId], [p].[ProductName]
+FROM [Products] AS [p]
+WHERE [p].[ProductId] > 0
+2026-07-26 22:35:53.528 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CustomerName]
+FROM [CustomerInfo] AS [c]
+WHERE [c].[CustomerId] > 0
+2026-07-26 22:35:53.529 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-26 22:35:53.532 +05:30 [INF] Executed ViewResult - view Create executed in 3.5944ms.
+2026-07-26 22:35:53.533 +05:30 [INF] Executed action ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb) in 12.8468ms
+2026-07-26 22:35:53.533 +05:30 [INF] Executed endpoint 'ServiceVaultWeb.Controllers.CustomerServicesController.Create (ServiceVaultWeb)'
+2026-07-26 22:35:53.533 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/CustomerServices/Create - 200 null text/html; charset=utf-8 16.2377ms
+2026-07-26 22:35:53.634 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_vs/browserLink - null null
+2026-07-26 22:35:53.635 +05:30 [INF] Request starting HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-26 22:35:53.636 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 0.9748ms
+2026-07-26 22:35:53.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:52047/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.2425ms

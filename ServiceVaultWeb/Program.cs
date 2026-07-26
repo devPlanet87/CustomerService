@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using ServiceVaultWeb.Data;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using ServiceVaultWeb.Repositories;
 using ServiceVaultWeb.Services;
 
@@ -15,7 +16,12 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+// Register MVC and enable Razor runtime compilation in Development when the package is installed
+var mvcBuilder = builder.Services.AddControllersWithViews();
+if (builder.Environment.IsDevelopment())
+{
+    mvcBuilder.AddRazorRuntimeCompilation();
+}
 
 // DbContext
 builder.Services.AddDbContext<ServiceVaultContext>(options =>
