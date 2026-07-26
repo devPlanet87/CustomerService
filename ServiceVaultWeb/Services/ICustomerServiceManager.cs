@@ -13,5 +13,10 @@ namespace ServiceVaultWeb.Services
         Task UpdateAsync(CustomerService entity);
         Task<List<Product>> GetProductsAsync();
         Task<List<CustomerInfo>> GetCustomersAsync();
+
+        // CustomerInfo CRUD
+        Task<CustomerInfo?> GetCustomerByIdAsync(int id);
+        Task AddCustomerAsync(CustomerInfo entity);
+        Task UpdateCustomerAsync(CustomerInfo entity);
     }
 }

@@ -44,5 +44,20 @@ namespace ServiceVaultWeb.Services
         {
             return _repository.GetCustomersAsync();
         }
+
+        public Task<CustomerInfo?> GetCustomerByIdAsync(int id)
+        {
+            return _repository.GetCustomerByIdAsync(id);
+        }
+
+        public Task AddCustomerAsync(CustomerInfo entity)
+        {
+            return _repository.AddCustomerAsync(entity);
+        }
+
+        public Task UpdateCustomerAsync(CustomerInfo entity)
+        {
+            return _repository.UpdateCustomerAsync(entity);
+        }
     }
 }

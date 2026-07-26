@@ -55,5 +55,22 @@ namespace ServiceVaultWeb.Repositories
         {
             return await _context.CustomerInfo.AsNoTracking().Where(c => c.CustomerId > 0).ToListAsync();
         }
+
+        public async Task<CustomerInfo?> GetCustomerByIdAsync(int id)
+        {
+            return await _context.CustomerInfo.FirstOrDefaultAsync(c => c.CustomerId == id);
+        }
+
+        public async Task AddCustomerAsync(CustomerInfo entity)
+        {
+            await _context.CustomerInfo.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateCustomerAsync(CustomerInfo entity)
+        {
+            _context.CustomerInfo.Update(entity);
+            await _context.SaveChangesAsync();
+        }
     }
 }
