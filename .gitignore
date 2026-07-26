@@ -72,3 +72,5 @@ nunit-*.xml
 /ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.dll
 /ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.pdb
 /ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.sourcelink.json
+*.json
+/ServiceVaultWeb/obj/Debug/net10.0/ServiceVaultWeb.csproj.FileListAbsolute.txt
