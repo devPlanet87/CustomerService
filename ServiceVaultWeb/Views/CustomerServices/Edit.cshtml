@@ -10,51 +10,51 @@
 
     <div class="mb-3">
         <label asp-for="CustomerId" class="form-label"></label>
-        <select asp-for="CustomerId" class="form-select" asp-items="ViewBag.Customers"></select>
+        <select asp-for="CustomerId" class="form-select form-select-sm" asp-items="ViewBag.Customers"></select>
         <span asp-validation-for="CustomerId" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="MobileNumber" class="form-label"></label>
-        <input asp-for="MobileNumber" class="form-control" />
+        <input asp-for="MobileNumber" class="form-control form-control-sm" />
         <span asp-validation-for="MobileNumber" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="Location" class="form-label"></label>
-        <input asp-for="Location" class="form-control" />
+        <input asp-for="Location" class="form-control form-control-sm" />
     </div>
 
     <div class="mb-3">
         <label asp-for="ProductId" class="form-label"></label>
-        <select asp-for="ProductId" class="form-select" asp-items="ViewBag.Products"></select>
+        <select asp-for="ProductId" class="form-select form-select-sm" asp-items="ViewBag.Products"></select>
         <span asp-validation-for="ProductId" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="ProductsDetail" class="form-label"></label>
-        <textarea asp-for="ProductsDetail" class="form-control"></textarea>
+        <textarea asp-for="ProductsDetail" class="form-control form-control-sm"></textarea>
     </div>
 
     <div class="mb-3">
         <label asp-for="Remarks" class="form-label"></label>
-        <textarea asp-for="Remarks" class="form-control"></textarea>
+        <textarea asp-for="Remarks" class="form-control form-control-sm"></textarea>
         <span asp-validation-for="Remarks" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label class="form-label">Product / Warranty Image</label>
-        <input type="file" name="productOrWarrantyImage" class="form-control" />
+        <input type="file" name="productOrWarrantyImage" class="form-control form-control-sm" />
         @if (!string.IsNullOrEmpty(Model.ProductOrWarrantyImage))
         {
             <div class="mt-2">
-                <a href="/ProductOrWarrantyImages/@Model.ProductOrWarrantyImage" target="_blank">View current image</a>
+                <a href="/ProductOrWarrantyImages/@Model.ProductOrWarrantyImage" target="_blank">View image</a>
             </div>
         }
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a class="btn btn-secondary" href="/CustomerServices">Cancel</a>
+    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+    <a class="btn btn-sm btn-secondary" href="/CustomerServices">Cancel</a>
 </form>
 
 @section Scripts {
