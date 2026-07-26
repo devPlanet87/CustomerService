@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Serilog;
 using ServiceVaultWeb.Data;
-using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using ServiceVaultWeb.Repositories;
 using ServiceVaultWeb.Services;
 
@@ -41,7 +42,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+//app.UseStaticFiles();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "ProductOrWarrantyImages")),
+    RequestPath = "/ProductOrWarrantyImages"
+});
 
 app.UseRouting();
 

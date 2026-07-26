@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using ServiceVaultWeb.Models;
 using ServiceVaultWeb.Services;
+using System.IO;
 
 namespace ServiceVaultWeb.Controllers
 {
@@ -11,10 +14,12 @@ namespace ServiceVaultWeb.Controllers
     public class CustomerServicesController : Controller
     {
         private readonly ICustomerServiceManager _manager;
+        private readonly IWebHostEnvironment _env;
 
-        public CustomerServicesController(ICustomerServiceManager manager)
+        public CustomerServicesController(ICustomerServiceManager manager, IWebHostEnvironment env)
         {
             _manager = manager;
+            _env = env;
         }
 
         /// <summary>
@@ -40,12 +45,26 @@ namespace ServiceVaultWeb.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CustomerService model)
+        public async Task<IActionResult> Create(CustomerService model, IFormFile productOrWarrantyImage)
         {
             if (!ModelState.IsValid)
             {
                 await PopulateSelectListsAsync();
                 return View(model);
+            }
+            // Handle image upload: store physical file and save only filename in DB
+            if (productOrWarrantyImage != null && productOrWarrantyImage.Length > 0)
+            {
+                var uploadsRoot = Path.Combine(_env.WebRootPath ?? string.Empty, "ProductOrWarrantyImages");
+                if (!Directory.Exists(uploadsRoot)) Directory.CreateDirectory(uploadsRoot);
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(productOrWarrantyImage.FileName)}";
+                var filePath = Path.Combine(uploadsRoot, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await productOrWarrantyImage.CopyToAsync(stream);
+                }
+
+                model.ProductOrWarrantyImage = fileName;
             }
 
             model.CreatedBy = "Admin";
@@ -70,7 +89,7 @@ namespace ServiceVaultWeb.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, CustomerService model)
+        public async Task<IActionResult> Edit(int id, CustomerService model, IFormFile productOrWarrantyImage)
         {
             if (id != model.CustomerServiceId) return BadRequest();
 
@@ -82,6 +101,30 @@ namespace ServiceVaultWeb.Controllers
             {
                 await PopulateSelectListsAsync();
                 return View(model);
+            }
+            // Handle image upload: if a new file was posted, save it and delete previous file
+            if (productOrWarrantyImage != null && productOrWarrantyImage.Length > 0)
+            {
+                var uploadsRoot = Path.Combine(_env.WebRootPath ?? string.Empty, "ProductOrWarrantyImages");
+                if (!Directory.Exists(uploadsRoot)) Directory.CreateDirectory(uploadsRoot);
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(productOrWarrantyImage.FileName)}";
+                var filePath = Path.Combine(uploadsRoot, fileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await productOrWarrantyImage.CopyToAsync(stream);
+                }
+
+                // delete old file if present
+                if (!string.IsNullOrEmpty(existing.ProductOrWarrantyImage))
+                {
+                    var oldPath = Path.Combine(uploadsRoot, existing.ProductOrWarrantyImage);
+                    if (System.IO.File.Exists(oldPath))
+                    {
+                        System.IO.File.Delete(oldPath);
+                    }
+                }
+
+                existing.ProductOrWarrantyImage = fileName;
             }
 
             // Copy only editable fields from posted model. Preserve other fields as-is.
