@@ -45,7 +45,7 @@ namespace ServiceVaultWeb.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CustomerService model, IFormFile productOrWarrantyImage)
+        public async Task<IActionResult> Create(CustomerService model, IFormFile? productOrWarrantyImage)
         {
             if (!ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace ServiceVaultWeb.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, CustomerService model, IFormFile productOrWarrantyImage)
+        public async Task<IActionResult> Edit(int id, CustomerService model, IFormFile? productOrWarrantyImage)
         {
             if (id != model.CustomerServiceId) return BadRequest();
 
@@ -99,6 +99,8 @@ namespace ServiceVaultWeb.Controllers
 
             if (!ModelState.IsValid)
             {
+                // retain existing image path so the edit view can still show the current image when validation fails
+                model.ProductOrWarrantyImage = existing.ProductOrWarrantyImage;
                 await PopulateSelectListsAsync();
                 return View(model);
             }
