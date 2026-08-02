@@ -6,6 +6,32 @@
     <title>@ViewData["Title"] - ServiceVault</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+    <style>
+        /* Map legacy MVC validation classes to Bootstrap 5 visual styles so both server-side
+           and client-side validation produce the expected red highlighting and background. */
+        .input-validation-error,
+        select.input-validation-error,
+        textarea.input-validation-error {
+            border-color: #dc3545 !important;
+            box-shadow: 0 0 0 .2rem rgba(220,53,69,.25) !important;
+            background-color: #f8d7da !important; /* light red background */
+        }
+
+        /* Make Bootstrap 5 invalid classes also show a red background for consistency */
+        .form-control.is-invalid,
+        .form-select.is-invalid {
+            background-color: #f8d7da !important;
+        }
+
+        .field-validation-error,
+        .validation-message,
+        .invalid-feedback {
+            color: #dc3545;
+            display: block;
+            margin-top: .25rem;
+            font-size: .875em;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark mb-4">
