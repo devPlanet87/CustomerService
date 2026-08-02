@@ -9,7 +9,7 @@
     <input type="hidden" asp-for="CustomerServiceId" />
 
     <div class="mb-3">
-        <label asp-for="CustomerId" class="form-label"></label>
+        <label asp-for="CustomerId" class="form-label">@Html.DisplayNameFor(m => m.CustomerId) <span class="text-danger">*</span></label>
         <select asp-for="CustomerId" class="form-select form-select-sm" asp-items="ViewBag.Customers"></select>
         <span asp-validation-for="CustomerId" class="text-danger"></span>
     </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="ProductId" class="form-label"></label>
+        <label asp-for="ProductId" class="form-label">@Html.DisplayNameFor(m => m.ProductId) <span class="text-danger">*</span></label>
         <select asp-for="ProductId" class="form-select form-select-sm" asp-items="ViewBag.Products"></select>
         <span asp-validation-for="ProductId" class="text-danger"></span>
     </div>

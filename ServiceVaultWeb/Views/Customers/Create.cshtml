@@ -7,7 +7,7 @@
 
 <form asp-action="Create" method="post" enctype="multipart/form-data">
     <div class="mb-3">
-        <label asp-for="CustomerName" class="form-label"></label>
+        <label asp-for="CustomerName" class="form-label">@Html.DisplayNameFor(m => m.CustomerName) <span class="text-danger">*</span></label>
         <input asp-for="CustomerName" class="form-control form-control-sm" />
         <span asp-validation-for="CustomerName" class="text-danger"></span>
     </div>
