@@ -9,7 +9,7 @@ namespace ServiceVaultWeb.Models
         [Key]
         public int CustomerId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Customer Name is required.")]
         [StringLength(100)]
         public string CustomerName { get; set; } = null!;
 
