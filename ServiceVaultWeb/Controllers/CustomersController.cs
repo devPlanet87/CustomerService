@@ -31,7 +31,7 @@ namespace ServiceVaultWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CustomerInfo model, IFormFile imageFile)
+        public async Task<IActionResult> Create(CustomerInfo model, IFormFile? imageFile)
         {
             if (!ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace ServiceVaultWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, CustomerInfo model, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, CustomerInfo model, IFormFile? imageFile)
         {
             if (id != model.CustomerId) return BadRequest();
 
@@ -75,6 +75,8 @@ namespace ServiceVaultWeb.Controllers
 
             if (!ModelState.IsValid)
             {
+                // retain existing image path when model validation fails so the view can still show the current image
+                model.ImagePath = existing.ImagePath;
                 return View(model);
             }
 
